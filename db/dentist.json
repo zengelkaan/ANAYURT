@@ -1,0 +1,32 @@
+{
+  "implant": {
+    "fiyat": "4500 TL",
+    "açıklama": "Titanyumdan yapılmış yapay diş kökü, eksik dişlerin yerine kullanılır.",
+    "işlem_süresi": "2-3 ay",
+    "ağrılı_mı": "Anestezi altında yapılır, işlem sırasında ağrı hissedilmez."
+  },
+  "Dolgu": {
+    "fiyat": "1000 TL",
+    "açıklama": "Çürük temizlendikten sonra oluşan boşluğun dolgu malzemesiyle kapatılmasıdır.",
+    "işlem_süresi": "30-45 dakika",
+    "malzeme": "Kompozit reçine veya amalgam"
+  },
+  "Diş Taşı Temizliği": {
+    "fiyat": "600 TL",
+    "açıklama": "Diş üzerindeki tartar ve plakların ultrasonik cihazlarla temizlenmesidir.",
+    "süre": "20-30 dakika",
+    "ne_sıklıkla": "6 ayda bir önerilir"
+  },
+  "Kanal Tedavisi": {
+    "fiyat": "2000 TL",
+    "açıklama": "Dişin canlı dokusunun (pulpa) çıkarılıp kanalın doldurulması işlemidir.",
+    "ağrılı_mı": "Lokal anestezi uygulanır, ağrısızdır.",
+    "süre": "1-2 seans"
+  },
+  "Zirkonyum Kaplama": {
+    "fiyat": "3500 TL",
+    "açıklama": "Estetik ve dayanıklı bir diş kaplama yöntemidir.",
+    "dayanıklılık": "10+ yıl",
+    "renk": "Doğal diş rengine en yakın malzeme"
+  }
+}

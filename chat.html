@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Canlı Destek</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    #chatBox { width: 100%; height: 300px; border: 1px solid #ccc; padding: 10px; overflow-y: scroll; margin-bottom: 10px; background-color: #f9f9f9; }
+    .msg { margin: 8px 0; }
+    .user { font-weight: bold; color: blue; }
+    .bot { color: green; }
+  </style>
+</head>
+<body>
+  <h2>Canlı Destek</h2>
+  <div id="chatBox"></div>
+  <form id="chatForm" autocomplete="off" onsubmit="return false;">
+    <input type="text" id="messageInput" placeholder="Mesajınızı yazın..." autocomplete="off" />
+    <button type="submit" id="sendBtn">Gönder</button>
+  </form>
+  <script>
+    // Sadece test etmek için API_BASE'yi sabit bir string bırak!
+    const API_BASE = "http://127.0.0.1:5001";
+    let token = localStorage.getItem("token");
+    let session_id = localStorage.getItem("session_id");
+
+    async function ensureToken() {
+      if (!token || !session_id) {
+        const res = await fetch(`${API_BASE}/token`, { method: "POST" });
+        const data = await res.json();
+        token = data.token;
+        session_id = data.session_id;
+        localStorage.setItem("token", token);
+        localStorage.setItem("session_id", session_id);
+      }
+    }
+
+    document.getElementById("chatForm").addEventListener("submit", async function(e) {
+      e.preventDefault(); // Yenilemeyi kesinlikle engelle!
+      e.stopPropagation(); // Her şeyi durdur!
+      await ensureToken();
+      await sendMessage();
+      return false;
+    });
+
+    async function sendMessage() {
+      const input = document.getElementById("messageInput");
+      const message = input.value.trim();
+      if (!message) return;
+      appendMessage("user", message);
+      input.value = "";
+      try {
+        const res = await fetch(`${API_BASE}/chat`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+        if (data.response) {
+          appendMessage("bot", data.response);
+        } else if (data.error) {
+          appendMessage("bot", `[Hata]: ${data.error}`);
+        } else {
+          appendMessage("bot", "[Bot cevabı alınamadı]");
+        }
+      } catch (e) {
+        appendMessage("bot", "[Hata oluştu]");
+        console.error(e);
+      }
+    }
+
+    function appendMessage(role, text) {
+      const chatBox = document.getElementById("chatBox");
+      const msg = document.createElement("div");
+      msg.className = "msg";
+      msg.innerHTML = `<span class="${role}">${role === "user" ? "Siz" : "Bot"}:</span> ${text}`;
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

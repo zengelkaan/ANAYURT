@@ -1,0 +1,30 @@
+{
+  "Aylık Üyelik": {
+    "fiyat": "800 TL",
+    "açıklama": "Sınırsız girişli spor salonu üyeliği (sınırsız grup dersleri dahil)"
+  },
+  "PT Seansı": {
+    "fiyat": "200 TL",
+    "süre": "50 dakika",
+    "açıklama": "Kişiye özel bire bir antrenman planı",
+    "paket": {
+      "5 Seans": "950 TL",
+      "10 Seans": "1800 TL"
+    }
+  },
+  "Beslenme Programı": {
+    "fiyat": "300 TL",
+    "içerik": "Kişiye özel makro ve kalori hesabına göre yazılmış 4 haftalık beslenme programı",
+    "görüşme": "1 defa yüz yüze veya online"
+  },
+  "Yağ Yakım Programı": {
+    "fiyat": "400 TL",
+    "süre": "4 hafta",
+    "içerik": "HIIT ve kardiyo ağırlıklı haftalık program"
+  },
+  "Kas Kütlesi Artırma": {
+    "fiyat": "400 TL",
+    "açıklama": "Split sistemli ağırlık ve protein destekli gelişim programı",
+    "ek_besin": ["Protein Tozu", "Kreatin"]
+  }
+}

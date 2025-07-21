@@ -1,0 +1,32 @@
+{
+  "Saç Kesimi": {
+    "fiyat": "300 TL",
+    "süre": "20-30 dakika",
+    "açıklama": "İsteğe bağlı modelle profesyonel saç kesimi hizmeti"
+  },
+  "Boya": {
+    "fiyat": "500 TL",
+    "renk_çeşitleri": ["Kumral", "Sarı", "Kızıl", "Platin", "Ombre"],
+    "süre": "1-2 saat",
+    "ekstra_bakım": "Renk koruyucu bakım önerilir"
+  },
+  "Fön": {
+    "fiyat": "150 TL",
+    "süre": "15-20 dakika",
+    "açıklama": "Kısa ve orta uzunlukta saçlar için fön çekme hizmeti"
+  },
+  "Brezilya Fönü": {
+    "fiyat": "1000 TL",
+    "kalıcılık": "2-3 ay",
+    "açıklama": "Saçı düzleştirip yumuşatan keratin bazlı kalıcı fön",
+    "süre": "2-3 saat"
+  },
+  "Saç Bakım Maskesi": {
+    "fiyat": "250 TL",
+    "içerik": ["Keratin", "Argan Yağı", "Biotin"],
+    "etki": "Saçı besler, parlaklık kazandırır",
+    "süre": "30 dakika"
+  }
+}
+
+
